@@ -110,7 +110,7 @@ main#MainContent {
   text-decoration: none;
   color: inherit;
 }
-footer.footer.color-scheme-1.gradient.section-sections--15889307697223__footer-padding {
+footer.footer.color-scheme-1.gradient{
     background-image: url(https://tsay.vn/wp-content/uploads/2024/12/bg-footer.jpg);
     color: white;
     background-position: 50% 50%;
@@ -236,7 +236,12 @@ span.spf-product__label.spf-product__label-sale.sale-text {
 nav.header__inline-menu {
     display: none;
 }
-
+.utility-bar.color-scheme-3.gradient.utility-bar--bottom-border {
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    z-index: 1000;
+}
 
 /*Mobile*/
 @media (max-width: 768px) {

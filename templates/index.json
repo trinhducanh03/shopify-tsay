@@ -4,7 +4,7 @@
       "type": "apps",
       "blocks": {
         "slider_revolution_slider_general_MmVfTP": {
-          "type": "shopify://apps/slider-revolution/blocks/slider_general/d2c2325b-ecb9-42b8-a0b0-ca2ffb6e3203",
+          "type": "shopify:\/\/apps\/slider-revolution\/blocks\/slider_general\/d2c2325b-ecb9-42b8-a0b0-ca2ffb6e3203",
           "settings": {
             "slider_id": "slider-1"
           }
@@ -27,7 +27,7 @@
         ".media {background: none;}"
       ],
       "settings": {
-        "image": "shopify://shop_images/Frame_2736.png",
+        "image": "shopify:\/\/shop_images\/Frame_2736.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -49,7 +49,7 @@
       "settings": {
         "title": "SẢN PHẨM MỚI CỦA CHÚNG TÔI",
         "heading_size": "h2",
-        "description": "<p>NEW ARRIVALS</p>",
+        "description": "<p>NEW ARRIVALS<\/p>",
         "show_description": false,
         "description_style": "body",
         "collection": "vang-dỏ",
