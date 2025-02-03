@@ -1,0 +1,307 @@
+.announcement-menu .submenu {
+  display: none; /* Ẩn submenu theo mặc định */
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+}
+.announcement-menu li:hover > .submenu {
+  display: block; /* Hiển thị submenu khi hover */
+}
+.announcement-menu .submenu li {
+  padding: 10px 15px;
+}
+.announcement-menu .submenu li a {
+  color: #333;
+  text-decoration: none;
+}
+.announcement-menu .submenu li a:hover {
+  color: #611b07;
+}
+.announcement-menu .menu {
+  list-style-type: none;
+  padding: 0px;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0px;
+}
+header.header.header--middle-left.header--mobile-center.page-width.header--has-account.header--has-localizations {
+  display: flex;
+  justify-content: space-between;
+}
+button.search-icon {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  bottom: 49px;
+  padding-left: 10px;
+}
+.search-box input {
+  width: 400px;
+  height: 35px;
+  border-radius: 99px;
+  border-color: rgba(0, 0, 0, 0.09);
+  padding-left: 40px;
+  font-size: 16px;
+}
+.search-box input::placeholder {
+  font-size: 16px;
+  color: #808080;
+}
+nav.announcement-menu a {
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: unset;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+nav.announcement-menu a:hover {
+  color: #611b07;
+}
+nav.announcement-menu .active a {
+  color: #611b07;
+}
+nav.announcement-menu .active .submenu li a {
+  color: #333;
+}
+span.submenu-arrow {
+  font-size: 10px;
+  margin-left: 5px;
+  color: #777;
+}
+main#MainContent {
+  margin-top: 53px;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 120rem;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1; /* Mỗi cột chiếm đều 25% */
+  padding: 10px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: bolder;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+footer.footer.color-scheme-1.gradient.section-sections--15889307697223__footer-padding {
+    background-image: url(https://tsay.vn/wp-content/uploads/2024/12/bg-footer.jpg);
+    color: white;
+    background-position: 50% 50%;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.footer__content-bottom-wrapper.page-width.footer__content-bottom-wrapper--center {
+    justify-content: center;
+}
+.footer__content-bottom.scroll-trigger.animate--slide-in{
+    position: relative;
+    padding-top: 10px;
+}
+.footer__content-bottom.scroll-trigger.animate--slide-in::before {
+    content: ''; 
+    position: absolute;
+    top: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 100px; 
+    height: 2px; 
+    background-color: white;
+}
+.card__badge.bottom.left {
+  display: none;
+}
+.card.article-card.card--standard.article-card__image--medium.card--media .card__information h3 {
+  color: #611b07;
+  text-align: left;
+  font-size: 14px;
+  font-family: math;
+}
+.card.card--standard.card--media .card__information h3 {
+  color: #611b07;
+  text-align: center;
+  font-size: 14px;
+  font-family: math;
+}
+.price.price--on-sale {
+  display: flex;
+  justify-content: center;
+}
+span.price-item.price-item--sale.price-item--last {
+  color: #611b07;
+  font-family: math;
+}
+div#shopify-section-template--15889307336775__image_with_text_tATkXp {
+    background-image: url(https://tsay.vn/wp-content/uploads/2024/12/bg-sales.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+section#shopify-section-template--15889307336775__main {
+    display: none;
+}
+section#shopify-section-template--15889307336775__featured_collection_7PDFnn {
+    background-image: url(https://tsay.vn/wp-content/uploads/2024/12/bg-special-products.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.footer-content {
+    position: relative;
+    padding: 20px 0;
+    border-top: 2px solid white;
+    background-color: #ffe7da;
+}
+
+.footer-containerr {
+    display: flex;
+    justify-content: space-between; /* Giãn đều các phần */
+    gap: 20px; /* Khoảng cách giữa các phần */
+    flex-wrap: wrap;
+    width: 120rem;
+    margin: 0 auto;
+}
+.footer-section {
+    flex: 1; /* Chia đều không gian */
+    max-width: 25%; /* Mỗi phần chiếm 1/4 chiều rộng */
+    text-align: center;
+}
+.footer-section p{
+  margin: 5px 0px;
+}
+section#shopify-section-template--15896119115847__main {
+    display: none;
+}
+section#shopify-section-template--15896129962055__main {
+    display: none;
+}
+.page-width.section-template--15889307238471__multicolumn_NEkXJH-padding.isolate.scroll-trigger.animate--slide-in {
+    margin: 0;
+    max-width: 100%;
+    padding: 0 0 45px 0;
+}
+.section-template--15896119115847__image_with_text_tATkXp-padding.gradient.color-scheme-4 {
+    background-image: url(https://tsay.vn/wp-content/uploads/2024/12/bg-sales.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.section-template--15889307304007__image_with_text_UDtqTF-padding.gradient.color-scheme-1 {
+    background-image: url(https://tsay.vn/wp-content/uploads/2024/12/Rectangle-8.svg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.page-width.page-width--narrow.section-template--15889307304007__main-padding {
+    display: none;
+}
+div#collection-template--15896119115847__featured_collection_7PDFnn {
+    background-image: url(https://tsay.vn/wp-content/uploads/2024/12/bg-special-products.png);
+}
+form.gf-controls-search-form {
+    display: none;
+}
+.spf-col-xl-4.spf-col-lg-4.spf-col-md-6.spf-col-sm-6.spf-col-6 {
+    max-width: 32%;
+}
+span.spf-product__label.spf-product__label-sale.sale-text {
+    display: none;
+}
+nav.header__inline-menu {
+    display: none;
+}
+
+
+/*Mobile*/
+@media (max-width: 768px) {
+  .search-box {
+    display: none;
+  }
+  .shopify-section.shopify-section-group-header-group.announcement-bar-section{
+    display: none;
+  }
+  main#MainContent {
+    margin-top: 0px;
+  }
+  .footer-containerr {
+    width: fit-content;
+    padding: 0px 15px;
+  }
+  .footer-section {
+      flex: 1 1 calc(50% - 12px); /* Mỗi phần tử chiếm 50% chiều rộng (chia thành 2 cột) */
+      max-width: calc(50% - 12px); /* Đảm bảo kích thước không vượt quá */
+      text-align: center;
+  }
+  .footer-column {
+    flex: 1 1 100%;
+  }
+  .footer-container{
+    width: fit-content;
+    gap: 0px;
+  }
+  .pf-c .sc-fhzEvr {
+    position: unset !important;
+  }
+  .nav-style-1 {
+    bottom: -20px !important;
+  }
+  button.pf-slider-prev.nav-style-1 {
+    left: 37% !important;
+  }
+  button.pf-slider-next.nav-style-1 {
+    right: 37% !important;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

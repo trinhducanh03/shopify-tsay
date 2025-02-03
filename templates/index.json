@@ -1,0 +1,129 @@
+{
+  "sections": {
+    "1737015722a913a44b": {
+      "type": "apps",
+      "blocks": {
+        "slider_revolution_slider_general_MmVfTP": {
+          "type": "shopify://apps/slider-revolution/blocks/slider_general/d2c2325b-ecb9-42b8-a0b0-ca2ffb6e3203",
+          "settings": {
+            "slider_id": "slider-1"
+          }
+        }
+      },
+      "block_order": [
+        "slider_revolution_slider_general_MmVfTP"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "pagefly-home": {
+      "type": "pagefly-home",
+      "settings": {}
+    },
+    "image_banner_RzhzLf": {
+      "type": "image-banner",
+      "custom_css": [
+        ".media {background: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Frame_2736.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "featured_collection_wN8Xna": {
+      "type": "featured-collection",
+      "custom_css": [
+        "h2.title.inline-richtext.h2.scroll-trigger.animate--slide-in {text-align: center; letter-spacing: 0.2em;}",
+        ".collection__description.body.rte.scroll-trigger.animate--slide-in p {text-align: center; font-weight: 400; font-size: 54px; color: #611b07; font-family: math;}"
+      ],
+      "settings": {
+        "title": "SẢN PHẨM MỚI CỦA CHÚNG TÔI",
+        "heading_size": "h2",
+        "description": "<p>NEW ARRIVALS</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "vang-dỏ",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "pagefly_section_YYU4LB": {
+      "type": "pagefly-section",
+      "settings": {
+        "section_id": "pf-2396e88a"
+      }
+    },
+    "pagefly_section_a3iDLk": {
+      "type": "pagefly-section",
+      "settings": {
+        "section_id": "pf-23466bd7"
+      }
+    },
+    "pagefly_section_b6FiWM": {
+      "type": "pagefly-section",
+      "settings": {
+        "section_id": "pf-96e88a88"
+      }
+    },
+    "featured_blog_WLjVMm": {
+      "type": "featured-blog",
+      "custom_css": [
+        ".title-wrapper-with-link.title-wrapper--self-padded-tablet-down.title-wrapper--no-top-margin {justify-content: center;}",
+        ".article-card__image-wrapper.card__media {border-radius: 0px !important;}",
+        ".card__information {padding: 10px 0px !important;}",
+        "a.full-unstyled-link {font-size: 16px;}",
+        ".card__inner.color-scheme-2.gradient.ratio {height: 250px;}",
+        "h3.card__heading.h2 {text-align: left !important;}"
+      ],
+      "settings": {
+        "heading": "TIN TỨC, SỰ KIỆN",
+        "heading_size": "h1",
+        "blog": "kien-thuc",
+        "post_limit": 4,
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "1737015722a913a44b",
+    "pagefly-home",
+    "image_banner_RzhzLf",
+    "featured_collection_wN8Xna",
+    "pagefly_section_YYU4LB",
+    "pagefly_section_a3iDLk",
+    "pagefly_section_b6FiWM",
+    "featured_blog_WLjVMm"
+  ]
+}

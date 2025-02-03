@@ -1,0 +1,86 @@
+
+{% if section.settings.section_id.size > 0 %}
+  <!-- PageFlyGlobalSection -->
+  {% render 'pagefly-main-js' %}
+  {% render 'pagefly-main-css' %}
+  {% include section.settings.section_id %}
+{% else %}
+  
+    {% if request.design_mode %}
+      <style>.pf-ph{font-size:14px!important;background:#fafafa;padding:20px;text-align:center;border:1px solid #f0f0f0;border-radius:4px;margin:15px}.pf-ph span{display:block;background:#e6f7ff;padding:8px 15px;border:1px solid #91d5ff}</style>
+      <div class="pf-ph">
+        <h3>PageFly Section</h3>
+        <span>No section selected. Please select your section from the list</span>
+      </div>
+    {% endif %}
+  
+{% endif %}
+
+{% schema %}
+{
+  "name": "PageFly Section",
+  "settings": [
+    {
+      "id": "section_id",
+      "type": "select",
+      "label": "Sections",
+      "options": [
+        {
+          "label": "Select section",
+          "value": ""
+        },
+        {
+          "label": "Danh mục sp",
+          "value": "pf-23466bd7"
+        },
+        {
+          "label": "Sp nổi bật",
+          "value": "pf-2396e88a"
+        },
+        {
+          "label": "Kiến thức",
+          "value": "pf-96e88a88"
+        },
+        {
+          "label": "Combo 2",
+          "value": "pf-78b40622"
+        },
+        {
+          "label": "Chính sách",
+          "value": "pf-b40622cf"
+        },
+        {
+          "label": "Combo 1",
+          "value": "pf-ef78b406"
+        },
+        {
+          "label": "Giá trị cốt lõi",
+          "value": "pf-a9a6ef78"
+        },
+        {
+          "label": "Liên hệ",
+          "value": "pf-a6ef78b4"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Find and edit your section on the [section listing](https://ductrinhstore.myshopify.com/admin/apps/pagefly/sections)"
+    },
+    {
+      "type": "paragraph",
+      "content": "To add block to a section, please use the App Block element on PageFly section editor."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PageFly Section"
+    }
+  ]
+}
+{% endschema %}
