@@ -1,84 +1,56 @@
 <section class="feature-banner">
   <div class="container">
-    {% if section.settings.kicker != blank %}
-      <p class="kicker">{{ section.settings.kicker }}</p>
+    {% if section.settings['text-banner'] != blank %}
+      <p>{{ section.settings['text-banner'] }}</p>
     {% endif %}
-    <h2 class="title">{{ section.settings.title | escape }}</h2>
-    {% if section.settings.subtitle != blank %}
-      <div class="subtitle">{{ section.settings.subtitle }}</div>
+    {% if section.settings['sub-text-banner'] != blank %}
+      <h2>{{ section.settings['sub-text-banner'] }}</h2>
     {% endif %}
-
-    <div class="blocks">
+    <div class="block">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'text' %}
-            <div class="b-text" {{ block.shopify_attributes }}>
-              {{ block.settings.text }}
-            </div>
+            <p>{{ block.settings.text }}</p>
           {% when 'button' %}
-            <a class="b-btn" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
-              {{ block.settings.label | escape }}
-            </a>
-          {% when '@app' %}
-            {% render block %} {# render app block #}
+            <a href="{{ block.settings.link }}">{{ block.settings.label }}</a>
+            >>>>>>> 63c4611 (update theme)
         {% endcase %}
       {% endfor %}
     </div>
   </div>
+</section>
 
-  <style>
-    .feature-banner {
-      padding: 40px 0;
-    }
-    .feature-banner .kicker {
-      opacity: 0.7;
-    }
-    .feature-banner .blocks {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .feature-banner .b-btn {
-      padding: 10px 16px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    }
-  </style>
-
-  {% schema %}
+{% schema %}
 {
-  "name": "Feature banner",
-  "tag": "section",
-  "class": "feature-banner",
+  "name": "Test banner",
+  "class": "test-banner",
   "settings": [
-    { "type": "text", "id": "kicker", "label": "Kicker" },
-    { "type": "text", "id": "title", "label": "Title", "default": "Section title" },
-    { "type": "richtext", "id": "subtitle", "label": "Subtitle" }
+    { "type": "text", "id": "text-banner", "label": "Label" },
+    { "type": "text", "id": "sub-text-banner", "label": "Sup Label" }
   ],
   "blocks": [
     {
       "type": "text",
-      "name": "Text hahah",
-      "settings": [{ "type": "richtext", "id": "text", "label": "Text" }]
+      "name": "Text",
+      "settings": [{ "type": "text", "id": "text", "label": "Text" }]
     },
     {
       "type": "button",
       "name": "Button",
       "settings": [
-        { "type": "text", "id": "label", "label": "Label", "default": "Learn more" },
+        { "type": "text", "id": "label", "label": "Label" },
         { "type": "url", "id": "link", "label": "Link" }
       ]
     },
-    { "type": "@app" } // cho phép App Blocks
+    { "type": "@app" }
   ],
   "max_blocks": 10,
   "presets": [
     {
-      "name": "Feature banner",
+      "name": "Test Banner",
       "blocks": [{ "type": "text" }, { "type": "button" }]
     }
   ],
   "enabled_on": { "templates": ["*"] }
 }
-  {% endschema %}
-</section>
+{% endschema %}
