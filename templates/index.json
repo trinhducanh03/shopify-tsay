@@ -615,8 +615,8 @@
       ],
       "name": "Test Banner",
       "settings": {
-        "text-banner": "",
-        "sub-text-banner": ""
+        "text-banner": "hahaha",
+        "sub-text-banner": "ihihihi"
       }
     }
   },
