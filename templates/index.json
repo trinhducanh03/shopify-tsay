@@ -628,10 +628,18 @@
             "question": "1 + 1 = ?",
             "answer": "<p>3</p>"
           }
+        },
+        "faqs_DmL7E4": {
+          "type": "faqs",
+          "settings": {
+            "question": "2 + 2 = ?",
+            "answer": "<p>4</p>"
+          }
         }
       },
       "block_order": [
-        "faqs_Kp8DfA"
+        "faqs_Kp8DfA",
+        "faqs_DmL7E4"
       ],
       "name": "FAQs",
       "settings": {
