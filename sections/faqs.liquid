@@ -20,36 +20,34 @@
   </section>
 {% endif %}
 
-{% comment %}
-  {% schema %}
-  {
-    "name": "Section Faqs",
-    "class": "section-faqs",
-    "settings": [
-      { "type": "text", "id": "title-faqs", "label": "Title Faqs" },
-      { "type": "richtext", "id": "description", "label": "Description" }
-    ],
-    "blocks": [
-      {
-        "type": "faqs",
-        "name": "Faqs item",
-        "settings": [
-          {
-            "type": "text",
-            "id": "question",
-            "label": "Question"
-          },
-          {
-            "type": "richtext",
-            "id": "answer",
-            "label": "Answer"
-          }
-        ]
-      }
-    ],
-    "max_blocks": 50,
-    "presets": [{ "name": "FAQs", "category": "Text" }],
-    "enabled_on": { "templates": ["*"] }
-  }
-  {% endschema %}
-{% endcomment %}
+{% schema %}
+{
+  "name": "Section Faqs",
+  "class": "section-faqs",
+  "settings": [
+    { "type": "text", "id": "title-faqs", "label": "Title Faqs" },
+    { "type": "richtext", "id": "description", "label": "Description" }
+  ],
+  "blocks": [
+    {
+      "type": "faqs",
+      "name": "Faqs item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [{ "name": "FAQs", "category": "Text" }],
+  "enabled_on": { "templates": ["*"] }
+}
+{% endschema %}
