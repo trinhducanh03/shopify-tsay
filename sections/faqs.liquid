@@ -10,10 +10,10 @@
     </div>
     <div class="body-faqs">
       {% for block in section.blocks %}
-        {% if block.type.faqs %}
+        {% if block.type == 'faqs' %}
           <details class="faq-basic__item">
             <summary class="faqs-q">
-              {{ block.settings.text }}
+              {{ block.settings.question }}
             </summary>
             <div class="faqs-a">
               {{ block.settings.answer }}
