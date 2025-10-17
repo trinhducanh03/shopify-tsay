@@ -1,58 +1,55 @@
-<section class="section-faqs">
-  <div class="container">
-    <div class="header-faqs">
-      {% if section.settings['title-faqs'] != blank %}
-        <h2>{{ section.settings['title-faqs'] }}</h2>
-      {% endif %}
-      {% if section.settings.description != blank %}
-        <p>{{ section.settings.description }}</p>
-      {% endif %}
-    </div>
-    <div class="body-faqs">
-      {% for block in section.blocks %}
-        {% if block.type == 'faqs' %}
-          <details class="faq-basic__item">
-            <summary class="faqs-q">
-              {{ block.settings.question }}
-            </summary>
-            <div class="faqs-a">
-              {{ block.settings.answer }}
-            </div>
-          </details>
-        {% endif %}
+{% assign faq_entries = product.metafields.custom.inofr_faqs.value %}
+
+{% if faq_entries and faq_entries.size > 0 %}
+  <section class="section-faqs">
+    <div class="container">
+      <h2 class="faqs-title">FAQs</h2>
+
+      {% for entry in faq_entries %}
+        <details
+          class="faq-item"
+          {% if forloop.first %}
+            open
+          {% endif %}
+        >
+          <summary class="faq-question">{{ entry.question | escape }}</summary>
+          <div class="faq-answer rte">{{ entry.answer | metafield_tag }}</div>
+        </details>
       {% endfor %}
     </div>
-  </div>
-</section>
+  </section>
+{% endif %}
 
-{% schema %}
-{
-  "name": "Section Faqs",
-  "class": "section-faqs",
-  "settings": [
-    { "type": "text", "id": "title-faqs", "label": "Title Faqs" },
-    { "type": "richtext", "id": "description", "label": "Description" }
-  ],
-  "blocks": [
-    {
-      "type": "faqs",
-      "name": "Faqs item",
-      "settings": [
-        {
-          "type": "text",
-          "id": "question",
-          "label": "Question"
-        },
-        {
-          "type": "richtext",
-          "id": "answer",
-          "label": "Answer"
-        }
-      ]
-    }
-  ],
-  "max_blocks": 50,
-  "presets": [{ "name": "FAQs", "category": "Text" }],
-  "enabled_on": { "templates": ["*"] }
-}
-{% endschema %}
+{% comment %}
+  {% schema %}
+  {
+    "name": "Section Faqs",
+    "class": "section-faqs",
+    "settings": [
+      { "type": "text", "id": "title-faqs", "label": "Title Faqs" },
+      { "type": "richtext", "id": "description", "label": "Description" }
+    ],
+    "blocks": [
+      {
+        "type": "faqs",
+        "name": "Faqs item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 50,
+    "presets": [{ "name": "FAQs", "category": "Text" }],
+    "enabled_on": { "templates": ["*"] }
+  }
+  {% endschema %}
+{% endcomment %}
