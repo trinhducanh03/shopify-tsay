@@ -618,41 +618,12 @@
         "text-banner": "hahaha",
         "sub-text-banner": "ihihihi"
       }
-    },
-    "faqs_RVbdyP": {
-      "type": "faqs",
-      "blocks": {
-        "faqs_Kp8DfA": {
-          "type": "faqs",
-          "settings": {
-            "question": "1 + 1 = ?",
-            "answer": "<p>3</p>"
-          }
-        },
-        "faqs_DmL7E4": {
-          "type": "faqs",
-          "settings": {
-            "question": "2 + 2 = ?",
-            "answer": "<p>4</p>"
-          }
-        }
-      },
-      "block_order": [
-        "faqs_Kp8DfA",
-        "faqs_DmL7E4"
-      ],
-      "name": "FAQs",
-      "settings": {
-        "title-faqs": "Custom faqs",
-        "description": "<p>test faqs</p>"
-      }
     }
   },
   "order": [
     "hero_RkimKJ",
     "product_list_X8Q7bi",
     "section_RhpYRt",
-    "test_section_7MkMhF",
-    "faqs_RVbdyP"
+    "test_section_7MkMhF"
   ]
 }
