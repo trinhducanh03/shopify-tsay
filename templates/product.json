@@ -493,18 +493,15 @@
         "padding-block-end": 1
       }
     },
-    "faqs_RY7MjA": {
+    "faqs_D6h8iq": {
       "type": "faqs",
-      "name": "FAQs",
-      "settings": {
-        "title-faqs": "",
-        "description": ""
-      }
+      "name": "Custom FAQs",
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "faqs_RY7MjA",
+    "faqs_D6h8iq",
     "product_recommendations_iA6pyd"
   ]
 }
