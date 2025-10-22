@@ -1,4 +1,4 @@
-{% assign infor_faqs = product.metafields.custom.info_faqs.references %}
+{% assign infor_faqs = product.metafields.custom.info_faqs.value %}
 
 {% if infor_faqs and infor_faqs.size > 0 %}
   <section>
@@ -6,8 +6,8 @@
       <h2>Custom Faqs Products</h2>
       {% for faq in infor_faqs %}
         <details>
-          <summary>{{ faq.question }}</summary>
-          <div>{{ faq.answer }}</div>
+          <summary>{{ faq.question.value }}</summary>
+          <div>{{ faq.answer.value }}</div>
         </details>
       {% endfor %}
     </div>
