@@ -1,19 +1,13 @@
-{% assign faq_entries = product.metafields.custom.inofr_faqs.value %}
+{% assign infor_faqs = product.metafields.custom.info_faqs.value %}
 
-{% if faq_entries and faq_entries.size > 0 %}
-  <section class="section-faqs">
+{% if infor_faqs and infor_faqs.size > 0 %}
+  <section>
     <div class="container">
-      <h2 class="faqs-title">FAQs</h2>
-
-      {% for entry in faq_entries %}
-        <details
-          class="faq-item"
-          {% if forloop.first %}
-            open
-          {% endif %}
-        >
-          <summary class="faq-question">{{ entry.question | escape }}</summary>
-          <div class="faq-answer rte">{{ entry.answer | metafield_tag }}</div>
+      <h2>Custom Faqs Products</h2>
+      {% for faq in infor_faqs %}
+        <details>
+          <summary>{{ faq.question }}</summary>
+          <div>{{ faq.answer }}</div>
         </details>
       {% endfor %}
     </div>
@@ -24,30 +18,7 @@
 {
   "name": "Section Faqs",
   "class": "section-faqs",
-  "settings": [
-    { "type": "text", "id": "title-faqs", "label": "Title Faqs" },
-    { "type": "richtext", "id": "description", "label": "Description" }
-  ],
-  "blocks": [
-    {
-      "type": "faqs",
-      "name": "Faqs item",
-      "settings": [
-        {
-          "type": "text",
-          "id": "question",
-          "label": "Question"
-        },
-        {
-          "type": "richtext",
-          "id": "answer",
-          "label": "Answer"
-        }
-      ]
-    }
-  ],
-  "max_blocks": 50,
-  "presets": [{ "name": "FAQs", "category": "Text" }],
+  "presets": [{ "name": "Custom FAQs", "category": "Text" }],
   "enabled_on": { "templates": ["*"] }
 }
 {% endschema %}
