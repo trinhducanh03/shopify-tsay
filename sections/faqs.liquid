@@ -1,5 +1,4 @@
-{% assign infor_faqs = product.metafields.custom.info_faqs.value %}
-<pre>{{ product.metafields.custom.info_faqs | json }}</pre>
+{% assign infor_faqs = product.metafields.custom.info_faqs.references %}
 
 {% if infor_faqs and infor_faqs.size > 0 %}
   <section>
