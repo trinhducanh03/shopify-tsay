@@ -44,20 +44,8 @@ document.addEventListener('click', function (e) {
     const target = e.target;
 
     // --- 1. Bắt nút Add to Cart ---
-    if (target.closest('form[action*="/cart/add"] [type="submit"], form[action*="/cart/add"] button:not([type])')) {
+    if (target.closest('form[action*="/cart/add"], button[name="plus"], button[name="minus"])')) {
         console.log('[CART] Submit Add to Cart form');
         checkGift(); // Gọi hàm của bạn
-    }
-
-    // --- 2. Bắt nút tăng số lượng ---
-    if (target.closest('button[name="plus"]')) {
-        console.log('[CART] Click plus');
-        checkGift();
-    }
-
-    // --- 3. Bắt nút giảm số lượng ---
-    if (target.closest('button[name="minus"]')) {
-        console.log('[CART] Click minus');
-        checkGift();
     }
 });
