@@ -65,5 +65,7 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+    {% comment %} {{ 'auto-gift.js' | asset_url | script_tag }} {% endcomment %}
+    <script src="{{ 'auto-gift.js' | asset_url }}" async></script>
   </body>
 </html>
