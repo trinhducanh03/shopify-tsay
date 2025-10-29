@@ -1,8 +1,8 @@
 
 // @ts-nocheck
 
-const GIFT_VARIANT_ID = 42128196239431; // <-- thay ID quà tặng của bạn
-const GIFT_THRESHOLD = 50000;     // <-- ngưỡng giá trị 500k (VND) 
+const GIFT_VARIANT_ID = 42128196239431;
+const GIFT_THRESHOLD = 50000;
 
 async function getCart() {
     const inforCart = await fetch('/cart.js');
