@@ -5,6 +5,7 @@ const GIFT_VARIANT_ID = 42128196239431;
 const GIFT_THRESHOLD = 50000;
 
 async function getCart() {
+    await new Promise(r => setTimeout(r, 200));
     const inforCart = await fetch('/cart.js');
     return inforCart.json();
 }
