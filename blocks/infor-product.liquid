@@ -1,0 +1,21 @@
+{% assign title_product = product.metafields.custom.title.value %}
+{% assign description_product = product.metafields.custom.description.value %}
+
+<section>
+  <h2>Infor Product</h2>
+  {% if title_product != blank %}
+    <p>{{ title_product }}</p>
+  {% endif %}
+
+  {% if description_product != blank %}
+    <p>{{ description_product }}</p>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Infor Product Block",
+  "class": "infor-product-block",
+  "presets": [{ "name": "Infor Product Block", "category": "Text" }]
+}
+{% endschema %}
