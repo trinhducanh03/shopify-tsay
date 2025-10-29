@@ -9,6 +9,13 @@ async function getCart() {
     return inforCart.json();
 }
 
+async function getaddCart() {
+    const inforaddCart = await fetch('/cart/add.js');
+    console.log('Xem add cart', inforaddCart.json());
+    return inforaddCart.json();
+
+}
+
 async function addCart() {
     await fetch('/cart/add.js', {
         method: 'POST',
