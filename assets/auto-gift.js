@@ -15,7 +15,7 @@ async function getaddCart() {
     return inforaddCart.json();
 
 }
-
+getaddCart();
 async function addCart() {
     await fetch('/cart/add.js', {
         method: 'POST',
