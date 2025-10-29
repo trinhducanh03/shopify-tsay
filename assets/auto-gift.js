@@ -4,15 +4,11 @@
 const GIFT_VARIANT_ID = 42128196239431;
 const GIFT_THRESHOLD = 50000;
 
-async function getCart() {
-    await new Promise(r => setTimeout(r, 400));
-    const res = await fetch(`/cart.js?_=${Date.now()}`, {
-        credentials: 'same-origin',
-        cache: 'no-store',
-        headers: { 'Accept': 'application/json' }
-    });
-    return res.json();
-}
+// async function getCart() {
+//     await new Promise(r => setTimeout(r, 400));
+//     const inforCart = await fetch('/cart.js');
+//     return inforCart.json();
+// }
 
 async function addCart() {
     await fetch('/cart/add.js', {
@@ -31,7 +27,7 @@ async function removeGift(linekey) {
 }
 
 async function checkGift() {
-    const cart = await getCart();
+    const cart = (await fetch('/cart.js')).json();
     const totalPrice = cart.original_total_price;
     const hasGift = cart.items.find(item => item.variant_id === GIFT_VARIANT_ID);
 
