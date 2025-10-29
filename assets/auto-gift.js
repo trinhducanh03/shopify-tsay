@@ -6,17 +6,14 @@ const GIFT_THRESHOLD = 50000;
 
 async function getCart() {
     await new Promise(r => setTimeout(r, 400));
-    const inforCart = await fetch('/cart.js');
-    return inforCart.json();
+    const res = await fetch(`/cart.js?_=${Date.now()}`, {
+        credentials: 'same-origin',
+        cache: 'no-store',
+        headers: { 'Accept': 'application/json' }
+    });
+    return res.json();
 }
 
-async function getaddCart() {
-    const inforaddCart = await fetch('/cart/add.js');
-    console.log('Xem add cart', inforaddCart.json());
-    return inforaddCart.json();
-
-}
-getaddCart();
 async function addCart() {
     await fetch('/cart/add.js', {
         method: 'POST',
