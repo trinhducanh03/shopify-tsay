@@ -497,10 +497,16 @@
       "type": "faqs",
       "name": "Custom FAQs",
       "settings": {}
+    },
+    "message_gift_qU88kW": {
+      "type": "message-gift",
+      "name": "Message Gift",
+      "settings": {}
     }
   },
   "order": [
     "main",
+    "message_gift_qU88kW",
     "product_recommendations_iA6pyd",
     "faqs_D6h8iq"
   ]
