@@ -44,7 +44,7 @@ document.addEventListener('click', function (e) {
     const target = e.target;
 
     // --- 1. Bắt nút Add to Cart ---
-    if (target.closest('form[action*="/cart/add"], button[name="plus"], button[name="minus"], button[name="add"])')) {
+    if (target.closest('form[action*="/cart/add"], button[name="plus"], button[name="minus"], button[name="add"]')) {
         console.log('[CART] Submit Add to Cart form');
         checkGift(); // Gọi hàm của bạn
     }
