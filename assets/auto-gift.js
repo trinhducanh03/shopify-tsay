@@ -3,6 +3,27 @@
 
 const GIFT_VARIANT_ID = 42128196239431;
 const GIFT_THRESHOLD = 50000;
+// Danh sách message
+const MESSAGES = [
+    "🎁 Cảm ơn bạn đã mua sắm! Bạn vừa nhận quà tặng đặc biệt.",
+    "💎 Bạn thật tuyệt! Đừng quên chia sẻ ưu đãi này nhé.",
+    "🌟 Quà tặng này chỉ dành riêng cho bạn!",
+    "✨ Thêm hàng vào giỏ để nhận thêm bất ngờ nhé!"
+];
+
+// Lấy message ngẫu nhiên
+function getRandomMessage() {
+    const i = Math.floor(Math.random() * MESSAGES.length);
+    return MESSAGES[i];
+}
+
+// Render message
+function renderRandomMessage() {
+    const el = document.querySelector('#random-message .message-text');
+    if (el) {
+        el.textContent = getRandomMessage();
+    }
+}
 
 async function getCart() {
     await new Promise(r => setTimeout(r, 400));
@@ -17,6 +38,7 @@ async function addCart() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: GIFT_VARIANT_ID, quantity: 1 })
     });
+    renderRandomMessage();
 }
 
 async function removeGift(linekey) {
@@ -41,7 +63,6 @@ async function checkGift() {
 
 checkGift();
 
-// Theo dõi khi người dùng thay đổi giỏ
 document.addEventListener('click', async function (e) {
     const target = e.target;
 
@@ -53,3 +74,4 @@ document.addEventListener('click', async function (e) {
         checkGift();
     }
 });
+document.addEventListener('DOMContentLoaded', renderRandomMessage);
