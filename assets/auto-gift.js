@@ -1,100 +1,51 @@
+
 // @ts-nocheck
-const GIFT_VARIANT_ID = 42128196239431; // ID quà tặng
-const GIFT_THRESHOLD = 50000;           // Ngưỡng giá (đơn vị: cent)
 
-let ignoreCheck = false; // Cờ chống vòng lặp
+const GIFT_VARIANT_ID = 42128196239431;
+const GIFT_THRESHOLD = 50000;
 
-// ==== Các hàm chính ====
-
-// Lấy thông tin giỏ hàng
 async function getCart() {
-    const res = await fetch('/cart.js');
-    return res.json();
+    const inforCart = await fetch('/cart.js');
+    return inforCart.json();
 }
 
-// Thêm quà vào giỏ
-async function addGift() {
-    ignoreCheck = true;
+async function addCart() {
     await fetch('/cart/add.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: GIFT_VARIANT_ID, quantity: 1 })
     });
-    ignoreCheck = false;
 }
 
-// Xoá quà khỏi giỏ
-async function removeGift(lineKey) {
-    ignoreCheck = true;
+async function removeGift(linekey) {
     await fetch('/cart/change.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: lineKey, quantity: 0 })
+        body: JSON.stringify({ id: linekey, quantity: 0 })
     });
-    ignoreCheck = false;
 }
 
-// Kiểm tra điều kiện quà tặng
 async function checkGift() {
-    try {
-        const cart = await getCart();
-        const total = cart.original_total_price || 0;
-        const giftItem = cart.items.find(item => item.variant_id === GIFT_VARIANT_ID);
+    const cart = await getCart();
+    const totalPrice = cart.original_total_price;
+    const hasGift = cart.items.find(item => item.variant_id === GIFT_VARIANT_ID);
 
-        if (total >= GIFT_THRESHOLD && !giftItem) {
-            await addGift();
-        } else if (total < GIFT_THRESHOLD && giftItem) {
-            await removeGift(giftItem.key);
-        }
-    } catch (err) {
-        console.warn('Lỗi checkGift:', err);
+    if (totalPrice >= GIFT_THRESHOLD && !hasGift) {
+        await addCart();
+    } else if (totalPrice < GIFT_THRESHOLD && hasGift) {
+        await removeGift(hasGift.key);
     }
 }
 
-// ==== Theo dõi mọi AJAX giỏ hàng ====
-(function () {
-    const REGEX = /\/cart\/(add|update|change|clear)(?:\.js)?/i;
-    const isCartAPI = (url, method = 'GET') =>
-        REGEX.test(url) && /POST|PUT|PATCH|DELETE/i.test(method);
-
-    let timer;
-    const triggerCheck = () => {
-        if (ignoreCheck) return;
-        clearTimeout(timer);
-        timer = setTimeout(checkGift, 100);
-    };
-
-    // Hook fetch
-    const _fetch = window.fetch;
-    window.fetch = function (input, init) {
-        const url = input instanceof Request ? input.url : String(input);
-        const method = (input instanceof Request ? input.method : init?.method) || 'GET';
-        const isCart = isCartAPI(url, method);
-
-        return _fetch.apply(this, arguments).then(res => {
-            if (isCart && res.ok) triggerCheck();
-            return res;
-        });
-    };
-
-    // Hook XMLHttpRequest
-    const open = XMLHttpRequest.prototype.open;
-    const send = XMLHttpRequest.prototype.send;
-
-    XMLHttpRequest.prototype.open = function (method, url) {
-        this._isCart = isCartAPI(url, method);
-        return open.apply(this, arguments);
-    };
-
-    XMLHttpRequest.prototype.send = function () {
-        if (this._isCart) {
-            this.addEventListener('load', () => {
-                if (this.status >= 200 && this.status < 300) triggerCheck();
-            });
-        }
-        return send.apply(this, arguments);
-    };
-})();
-
-// ==== Chạy ngay khi load ====
 checkGift();
+
+// Theo dõi khi người dùng thay đổi giỏ
+document.addEventListener('click', function (e) {
+    const target = e.target;
+
+    // --- 1. Bắt nút Add to Cart ---
+    if (target.closest('form[action*="/cart/add"], button[name="plus"], button[name="minus"])')) {
+        console.log('[CART] Submit Add to Cart form');
+        checkGift(); // Gọi hàm của bạn
+    }
+});
