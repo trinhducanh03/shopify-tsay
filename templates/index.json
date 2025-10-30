@@ -373,7 +373,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.{{ closest.product.metafields.custom.description | metafield_tag }}{{ closest.product.title }}</p>",
+                        "text": "<p>{{ closest.product.metafields.custom.title.value }}</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -399,7 +399,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>{{ closest.product.metafields.custom.description | metafield_tag }}</p>{{ closest.product.description }}",
+                        "text": "<p>{{ closest.product.metafields.custom.description | metafield_tag }}</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
