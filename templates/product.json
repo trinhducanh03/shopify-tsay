@@ -92,6 +92,58 @@
               },
               "blocks": {}
             },
+            "text_YUDpcK": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>{{ closest.product.metafields.custom.title.value }}</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_6hbjRV": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>{{ closest.product.metafields.custom.description | metafield_tag }}</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "reviews": {
               "type": "review",
               "settings": {
@@ -202,6 +254,8 @@
           },
           "block_order": [
             "product_title_tefwj7",
+            "text_YUDpcK",
+            "text_6hbjRV",
             "reviews",
             "price_a7krng",
             "text_gXMUag",
@@ -220,6 +274,11 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "message_gift_qU88kW": {
+      "type": "message-gift",
+      "name": "Message Gift",
+      "settings": {}
     },
     "product_recommendations_iA6pyd": {
       "type": "product-recommendations",
@@ -496,11 +555,6 @@
     "faqs_D6h8iq": {
       "type": "faqs",
       "name": "Custom FAQs",
-      "settings": {}
-    },
-    "message_gift_qU88kW": {
-      "type": "message-gift",
-      "name": "Message Gift",
       "settings": {}
     }
   },
