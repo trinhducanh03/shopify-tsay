@@ -3,12 +3,13 @@
 
 const GIFT_VARIANT_ID = 42128196239431;
 const GIFT_THRESHOLD = 50000;
+
 // Danh sách message
 const MESSAGES = [
-    "🎁 Cảm ơn bạn đã mua sắm! Bạn vừa nhận quà tặng đặc biệt.",
-    "💎 Bạn thật tuyệt! Đừng quên chia sẻ ưu đãi này nhé.",
-    "🌟 Quà tặng này chỉ dành riêng cho bạn!",
-    "✨ Thêm hàng vào giỏ để nhận thêm bất ngờ nhé!"
+    "Cảm ơn bạn đã mua sắm! Bạn vừa nhận quà tặng đặc biệt.",
+    "Bạn thật tuyệt! Đừng quên chia sẻ ưu đãi này nhé.",
+    "Quà tặng này chỉ dành riêng cho bạn!",
+    "Thêm hàng vào giỏ để nhận thêm bất ngờ nhé!"
 ];
 
 // Lấy message ngẫu nhiên
