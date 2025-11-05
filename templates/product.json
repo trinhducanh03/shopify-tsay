@@ -9,6 +9,20 @@
  */
 {
   "sections": {
+    "divider_dzL4J8": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 100,
+        "padding-block-end": 100
+      }
+    },
     "message_gift_qU88kW": {
       "type": "message-gift",
       "blocks": {
@@ -584,6 +598,7 @@
     }
   },
   "order": [
+    "divider_dzL4J8",
     "message_gift_qU88kW",
     "main",
     "product_recommendations_iA6pyd",
