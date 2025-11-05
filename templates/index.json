@@ -650,6 +650,10 @@
         "text-banner": "hahaha",
         "sub-text-banner": "ihihihi"
       }
+    },
+    "pagefly-home": {
+      "type": "pagefly-home",
+      "settings": {}
     }
   },
   "order": [
@@ -657,6 +661,7 @@
     "product_list_X8Q7bi",
     "custom_field_product_M6WRVd",
     "section_RhpYRt",
-    "test_section_7MkMhF"
+    "test_section_7MkMhF",
+    "pagefly-home"
   ]
 }
