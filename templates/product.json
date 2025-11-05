@@ -11,6 +11,31 @@
   "sections": {
     "message_gift_qU88kW": {
       "type": "message-gift",
+      "blocks": {
+        "message_tGthYg": {
+          "type": "message",
+          "settings": {
+            "text": "1. Chúc mừng bạn"
+          }
+        },
+        "message_WRXexT": {
+          "type": "message",
+          "settings": {
+            "text": "2. Bạn được tặng quà"
+          }
+        },
+        "message_RMdRCc": {
+          "type": "message",
+          "settings": {
+            "text": "3. Giá trị đơn hàng vượt ngưỡng, shop xin tặng bạn 1 phần quà"
+          }
+        }
+      },
+      "block_order": [
+        "message_tGthYg",
+        "message_WRXexT",
+        "message_RMdRCc"
+      ],
       "name": "Message Gift",
       "settings": {}
     },
