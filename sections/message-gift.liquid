@@ -10,14 +10,15 @@
   Hiển thị ngẫu nhiên đúng 1 block trong số các block admin nhập.
 {% endcomment %}
 
-<section class="random-messages">
+<section id="RandomMessages" class="random-messages" data-section-id="{{ section.id }}">
   {% if section.blocks.size > 0 %}
-    {%- assign random_block = section.blocks -%}
-    {% for block in random_block %}
+    {%- assign seed = 'now' | date: '%s' | plus: 0 -%}
+    {%- assign idx = seed | modulo: section.blocks.size -%}
+    {%- for block in section.blocks offset: idx limit: 1 -%}
       <div class="random-message" data-block-id="{{ block.id }}">
         {{ block.settings.text }}
       </div>
-    {% endfor %}
+    {%- endfor -%}
   {% else %}
     <div class="random-message--empty">Chưa có message nào.</div>
   {% endif %}
