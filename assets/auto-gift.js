@@ -14,7 +14,7 @@
 
 const GIFT_VARIANT_ID = 42128196239431;
 const GIFT_THRESHOLD = 50000;
-const RANDOM_SECTION_ID = 'template--17398625599559__message_gift_qU88kW';
+const RANDOM_SECTION_ID = 'template--17207724015687__message_gift_qU88kW';
 
 async function getCart() {
     await new Promise(r => setTimeout(r, 400));
