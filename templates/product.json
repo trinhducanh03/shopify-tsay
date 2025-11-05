@@ -9,6 +9,50 @@
  */
 {
   "sections": {
+    "divider_dzL4J8": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 100,
+        "padding-block-end": 100
+      }
+    },
+    "message_gift_qU88kW": {
+      "type": "message-gift",
+      "blocks": {
+        "message_tGthYg": {
+          "type": "message",
+          "settings": {
+            "text": "1. Chúc mừng bạn"
+          }
+        },
+        "message_WRXexT": {
+          "type": "message",
+          "settings": {
+            "text": "2. Bạn được tặng quà"
+          }
+        },
+        "message_RMdRCc": {
+          "type": "message",
+          "settings": {
+            "text": "3. Giá trị đơn hàng vượt ngưỡng, shop xin tặng bạn 1 phần quà"
+          }
+        }
+      },
+      "block_order": [
+        "message_tGthYg",
+        "message_WRXexT",
+        "message_RMdRCc"
+      ],
+      "name": "Message Gift",
+      "settings": {}
+    },
     "main": {
       "type": "product-information",
       "blocks": {
@@ -274,36 +318,6 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
-    },
-    "message_gift_qU88kW": {
-      "type": "message-gift",
-      "blocks": {
-        "message_tGthYg": {
-          "type": "message",
-          "settings": {
-            "text": "1. Chúc mừng bạn"
-          }
-        },
-        "message_WRXexT": {
-          "type": "message",
-          "settings": {
-            "text": "2. Bạn được tặng quà"
-          }
-        },
-        "message_RMdRCc": {
-          "type": "message",
-          "settings": {
-            "text": "3. Giá trị đơn hàng vượt ngưỡng, shop xin tặng bạn 1 phần quà"
-          }
-        }
-      },
-      "block_order": [
-        "message_tGthYg",
-        "message_WRXexT",
-        "message_RMdRCc"
-      ],
-      "name": "Message Gift",
-      "settings": {}
     },
     "product_recommendations_iA6pyd": {
       "type": "product-recommendations",
@@ -584,8 +598,9 @@
     }
   },
   "order": [
-    "main",
+    "divider_dzL4J8",
     "message_gift_qU88kW",
+    "main",
     "product_recommendations_iA6pyd",
     "faqs_D6h8iq"
   ]
