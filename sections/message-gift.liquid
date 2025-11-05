@@ -13,9 +13,11 @@
 <section class="random-messages">
   {% if section.blocks.size > 0 %}
     {%- assign random_block = section.blocks -%}
-    <div class="random-message" data-block-id="{{ random_block.id }}">
-      {{ random_block.settings.text }}
-    </div>
+    {% for block in random_block %}
+      <div class="random-message" data-block-id="{{ block.id }}">
+        {{ block.settings.text }}
+      </div>
+    {% endfor %}
   {% else %}
     <div class="random-message--empty">Chưa có message nào.</div>
   {% endif %}
