@@ -69,5 +69,22 @@
     <script src="{{ 'auto-gift.js' | asset_url }}" defer></script>
     <script src="{{ 'disable-button-checkout.js' | asset_url }}" defer></script>
     <script src="{{ 'oregon-popup.js' | asset_url }}" defer></script>
+    <style>
+      .oregon-popup .popup-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .oregon-popup .popup-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+      }
+    </style>
   </body>
 </html>

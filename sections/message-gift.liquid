@@ -1,14 +1,38 @@
-<section id="random-message">
-  <div class="message-box">
-    <p class="message-text">Loading message...</p>
-  </div>
+{% comment %}
+  Section -> render random 1 block
+  -> Blocks
+      admin enter 10 blbock
+  ajax add -> call ajax section render
+{% endcomment %}
+
+{% comment %}
+  sections/random-messages.liquid
+  Hiển thị ngẫu nhiên đúng 1 block trong số các block admin nhập.
+{% endcomment %}
+
+<section class="random-messages">
+  {% if section.blocks.size > 0 %}
+    {%- assign random_block = section.blocks -%}
+    <div class="random-message" data-block-id="{{ random_block.id }}">
+      {{ random_block.settings.text }}
+    </div>
+  {% else %}
+    <div class="random-message--empty">Chưa có message nào.</div>
+  {% endif %}
 </section>
 
 {% schema %}
 {
-  "name": "Message Gift",
-  "class": "message-gift",
-  "presets": [{ "name": "Message Gift", "category": "Text" }],
-  "enabled_on": { "templates": ["*"] }
+  "name": "Random messages",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [{ "type": "text", "id": "text", "label": "Nội dung message" }]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [{ "name": "Random messages" }]
 }
 {% endschema %}

@@ -1,41 +1,40 @@
 // @ts-nocheck
-document.addEventListener('DOMContentLoaded', async function () {
-    // Đợi Shopify privacy API sẵn sàng
-    if (!window.Shopify || !Shopify.customerPrivacy) {
-        console.warn('Shopify Customer Privacy API chưa sẵn sàng');
-        return;
-    }
 
-    try {
-        const regionData = await Shopify.customerPrivacy.getRegion();
+window.Shopify.loadFeatures(
+    [
+        {
+            name: 'consent-tracking-api',
+            version: '0.1',
+        },
+    ],
+    error => {
+        if (error) {
+            console.error('Không thể load Customer Privacy API:', error);
+            return;
+        }
+        const region = Shopify.customerPrivacy.getRegion();
+        console.log('Region:', region);
 
-        console.log('📍 Thông tin vùng:', regionData);
-        // Ví dụ: { country: "US", region: "OR" }
-
-        if (regionData.country === 'US' && regionData.region === 'OR') {
+        if (region === 'VNSG') {
             showOregonPopup();
         }
-    } catch (err) {
-        console.error('❌ Không thể lấy thông tin vùng:', err);
-    }
-});
-
+    },
+);
+// Hàm hiển thị popup
 function showOregonPopup() {
-    // Tạo popup
     const popup = document.createElement('div');
     popup.className = 'oregon-popup';
     popup.innerHTML = `
       <div class="popup-backdrop"></div>
       <div class="popup-box">
         <h2>Welcome, Oregon visitor!</h2>
-        <p>We have a special notice for Oregon residents.</p>
-        <button id="closePopup">Close</button>
+        <p>This message is only for Oregon residents.</p>
+        <button id="closePopup">OK</button>
       </div>
     `;
     document.body.appendChild(popup);
 
-    // Đóng popup
-    document.querySelector('#closePopup').addEventListener('click', () => {
+    document.getElementById('closePopup').addEventListener('click', function () {
         popup.remove();
     });
 }
