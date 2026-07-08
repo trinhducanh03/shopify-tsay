@@ -70,6 +70,22 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+
+          {% if product.tags contains 'custom_field' and product.metafields.custom.enable_custom_field.value %}
+            <div class="product-form__custom-field">
+              <label for="custom-field">Custom Field</label>
+          
+              <input
+                id="custom-field"
+                type="text"
+                name="properties[Custom Field]"
+                placeholder="Enter your value"
+                class="field__input"
+                style="border: 1px solid; margin-bottom: 1rem;"
+              >
+            </div>
+          {% endif %}
+
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"

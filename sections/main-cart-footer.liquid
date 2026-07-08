@@ -104,6 +104,16 @@
                 </small>
               </div>
             {%- else -%}
+              <div class="cart__agree">
+                <input 
+                  type="checkbox"
+                  id="cart-agree" 
+                  name="attributes[I Agree]" 
+                  form="cart"
+                  value="Yes">
+                <label for="cart-agree">I Agree</label><br>
+              </div>
+
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <button
                   type="submit"
@@ -113,6 +123,7 @@
                   {% if cart == empty %}
                     disabled
                   {% endif %}
+                  disabled
                   form="cart"
                 >
                   {{ 'sections.cart.checkout' | t }}
@@ -132,7 +143,7 @@
     </div>
   </div>
 </div>
-
+<script src="{{ 'cart-agree.js' | asset_url }}" defer="defer"></script>
 {% schema %}
 {
   "name": "t:sections.main-cart-footer.name",
