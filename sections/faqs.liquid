@@ -6,12 +6,12 @@
 
         {{ product.metafields.custom.faq_list.value | json }}
 
-        {% comment %} {% for block in section.blocks %}
+        {% for faq in product.metafields.custom.faq_list.value %}
             <div class="faq-item">
-                <h3>{{ block.settings.question }}</h3>
-                <p>{{ block.settings.answer }}</p>
+                <h3>{{ faq.question }}</h3>
+                <p>{{ faq.answer }}</p>
             </div>
-        {% endfor %}      {% endcomment %}
+        {% endfor %}
     {% else %}
         <h2>{{ section.settings.heading }}</h2>
 
