@@ -80,11 +80,20 @@
       "type": "pagefly-home",
       "disabled": true,
       "settings": {}
+    },
+    "faqs_pfc7dY": {
+      "type": "faqs",
+      "name": "FAQs ",
+      "settings": {
+        "heading": "",
+        "description": ""
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "pagefly-home"
+    "pagefly-home",
+    "faqs_pfc7dY"
   ]
 }
