@@ -1,28 +1,36 @@
 <div class="faqs">
     {% if product %}
-        <h2>{{ product.metafields.custom.faq_title.value }}</h2>
-
-        <p>{{ product.metafields.custom.faq_description.value }}</p>
-
-        {{ product.metafields.custom.faq_list.value | json }}
-
-        {% for faq in product.metafields.custom.faq_list.value %}
-            <div class="faq-item">
-                <h3>{{ faq.question }}</h3>
-                <p>{{ faq.answer }}</p>
-            </div>
-        {% endfor %}
+      <h2>{{ product.metafields.custom.faq_title.value }}</h2>
+  
+      <p>{{ product.metafields.custom.faq_description.value }}</p>
+  
+      {% for faq in product.metafields.custom.faq_list.value %}
+        <details class="faq-item">
+          <summary class="faq-question">
+            {{ faq.question.value }}
+          </summary>
+  
+          <div class="faq-answer">
+            {{ faq.answer.value }}
+          </div>
+        </details>
+      {% endfor %}
     {% else %}
-        <h2>{{ section.settings.heading }}</h2>
-
-        <p>{{ section.settings.description }}</p>
-
-        {% for block in section.blocks %}
-            <div class="faq-item">
-                <h3>{{ block.settings.question }}</h3>
-                <p>{{ block.settings.answer }}</p>
-            </div>
-        {% endfor %}
+      <h2>{{ section.settings.heading }}</h2>
+  
+      <p>{{ section.settings.description }}</p>
+  
+      {% for block in section.blocks %}
+        <details class="faq-item">
+          <summary class="faq-question">
+            {{ block.settings.question }}
+          </summary>
+  
+          <div class="faq-answer">
+            {{ block.settings.answer }}
+          </div>
+        </details>
+      {% endfor %}
     {% endif %}
 </div>
 
