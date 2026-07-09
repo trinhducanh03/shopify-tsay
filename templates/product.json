@@ -85,6 +85,10 @@
     "disclosures": {
       "type": "disclosures",
       "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 0
       }
@@ -109,13 +113,23 @@
     },
     "pagefly-product-section": {
       "type": "pagefly-product-section",
+      "disabled": true,
       "settings": {}
+    },
+    "faqs_ri6DCa": {
+      "type": "faqs",
+      "name": "FAQs",
+      "settings": {
+        "heading": "",
+        "description": ""
+      }
     }
   },
   "order": [
     "main",
     "disclosures",
     "related-products",
-    "pagefly-product-section"
+    "pagefly-product-section",
+    "faqs_ri6DCa"
   ]
 }
