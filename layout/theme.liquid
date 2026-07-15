@@ -405,7 +405,7 @@
       window.autoGiftSettings = {
         giftProductHandle: {{ settings.gift_product.handle | json }},
         giftVariantId: {{ settings.gift_product.selected_or_first_available_variant.id | json }},
-        threshold: {{ settings.gift_threshold | json }}
+        threshold: {{ settings.gift_threshold | times: 100 | json }}
       };
     </script>
     

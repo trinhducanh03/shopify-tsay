@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async() => {
     console.log('Auto gift settings:', window.autoGiftSettings);
-
+    
     await checkGiftThreshold();
 
     subscribe(PUB_SUB_EVENTS.cartUpdate, async() => { 
@@ -56,6 +56,7 @@ async function removeGift() {
 }
 
 async function checkGiftThreshold(){
+      
     if(isUpdatingGift) return;
 
     isUpdatingGift = true;
