@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async() => {
     console.log('Auto gift settings:', window.autoGiftSettings);
-    
+
     await checkGiftThreshold();
 
     subscribe(PUB_SUB_EVENTS.cartUpdate, async() => { 
@@ -41,16 +41,24 @@ async function addGift() {
     });
 }
 
+// Find line gift
+function getGiftLine(cart){
+    const giftIndex =   cart.items.findIndex(
+        (item) => item.variant_id === giftVariantId
+    );
+    return giftIndex === -1 ? null : giftIndex + 1;
+}
+
 // Remove gift 
-async function removeGift() {
+async function removeGift(line) {
     await fetch('/cart/change.js', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            id: giftVariantId,
-            quantity: 0
+            line,
+            quantity: 0 
         })
     });
 }
@@ -60,16 +68,22 @@ async function checkGiftThreshold(){
     if(isUpdatingGift) return;
 
     isUpdatingGift = true;
-    const cart = await getCart();
-    
-    if(cart.total_price >= threshold){
-        if(!hasGift(cart)){
-            await addGift();
+
+    try{
+        const cart = await getCart();
+        const giftLine = getGiftLine(cart);
+        const giftExists = giftLine !== null;
+
+        if(cart.total_price >= threshold){
+            if(!giftExists){
+                await addGift();
+            }
+        }else{
+            if(giftExists){
+                await removeGift(giftLine);
+            }
         }
-    }else{
-        if(hasGift(cart)){
-            await removeGift();
-        }
+    }finally{
+        isUpdatingGift = false;
     }
-    isUpdatingGift = false;
 }
