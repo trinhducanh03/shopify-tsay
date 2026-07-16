@@ -101,38 +101,49 @@ async function checkGiftThreshold(){
 
 async function getRandomMessageSection() {
     const currentSection = document.querySelector('.random-message');
-    
-    const sectionId = currentSection?.dataset.sectionId;
-
-    if (!sectionId) {
-      throw new Error('Cannot find random message section id');
+    if (!currentSection) {
+        throw new Error('Random message section not found');
     }
 
+    const sectionId = currentSection.dataset.sectionId;
     const url = new URL(window.location.href);
-  
     url.searchParams.set('section_id', sectionId);
-  
-    const response = await fetch(url.toString());
-  
-    if (!response.ok) {
-      throw new Error('Cannot get random message section');
-    }
-  
-    return response.text();
-  }
 
-async function refreshRandomMessageSection() {
-    const html = await getRandomMessageSection();
-  
+    const response = await fetch(url.toString())
+    if (!response.ok) {
+        throw new Error('Cannot get random message section');
+    }
+
+    const html = await response.text();
+
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
-  
-    const newSection = doc.querySelector('.random-message');
-    const currentSection = document.querySelector('.random-message');
-  
-    if (!newSection || !currentSection) return;
-  
+
+    const newSection = doc.querySelector(
+        `.random-message[data-section-id="${sectionId}"]`
+    );
+
+    if (!newSection) {
+        throw new Error('New random message section not found');
+    }
+
     currentSection.replaceWith(newSection);
+
+    console.log(newSection);
 }
+
+// async function refreshRandomMessageSection() {
+//     const html = await getRandomMessageSection();
+  
+//     const parser = new DOMParser();
+//     const doc = parser.parseFromString(html, 'text/html');
+  
+//     const newSection = doc.querySelector('.random-message');
+//     const currentSection = document.querySelector('.random-message');
+  
+//     if (!newSection || !currentSection) return;
+  
+//     currentSection.replaceWith(newSection);
+// }
 
 
