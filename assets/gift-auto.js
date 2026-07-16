@@ -102,7 +102,7 @@ async function checkGiftThreshold(){
 async function getRandomMessageSection() {
     const url = new URL(window.location.href);
   
-    url.searchParams.set('section_id', 'random-message');
+    url.searchParams.set('section_id', 'random-messages');
   
     const response = await fetch(url.toString());
   
@@ -112,7 +112,7 @@ async function getRandomMessageSection() {
   
     return response.text();
   }
-  
+
 async function refreshRandomMessageSection() {
     const html = await getRandomMessageSection();
   
