@@ -9,6 +9,36 @@
  */
 {
   "sections": {
+    "random_messages_4LiFPE": {
+      "type": "random-messages",
+      "blocks": {
+        "messages_rmCzRN": {
+          "type": "messages",
+          "settings": {
+            "message": "❤️ Thank you for shopping!"
+          }
+        },
+        "messages_3KG77J": {
+          "type": "messages",
+          "settings": {
+            "message": "🎁 You received a free gift!"
+          }
+        },
+        "messages_kDLDHF": {
+          "type": "messages",
+          "settings": {
+            "message": "🎉 Congratulations!"
+          }
+        }
+      },
+      "block_order": [
+        "messages_rmCzRN",
+        "messages_3KG77J",
+        "messages_kDLDHF"
+      ],
+      "name": "Random Messages",
+      "settings": {}
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -126,6 +156,7 @@
     }
   },
   "order": [
+    "random_messages_4LiFPE",
     "main",
     "disclosures",
     "related-products",
