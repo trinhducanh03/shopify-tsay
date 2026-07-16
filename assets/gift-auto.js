@@ -39,6 +39,7 @@ async function addGift() {
             quantity: 1
         })
     });
+    await refreshRandomMessageSection();
 }
 
 // Find line gift
@@ -87,3 +88,29 @@ async function checkGiftThreshold(){
         isUpdatingGift = false;
     }
 }
+
+
+async function getRandomMessageSection(){
+    const response = fetch('${window.location.pathname}?section_id=random-messsages');
+
+    if(!response.ok){
+        throw new Error('Cannot get random message section');
+    }
+    return response.text();
+}
+
+async function refreshRandomMessageSection() {
+    const html = await getRandomMessageSection();
+  
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+  
+    const newSection = doc.querySelector('.random-message');
+    const currentSection = document.querySelector('.random-message');
+  
+    if (!newSection || !currentSection) return;
+  
+    currentSection.replaceWith(newSection);
+  }
+
+

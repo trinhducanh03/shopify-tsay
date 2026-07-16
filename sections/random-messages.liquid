@@ -1,0 +1,35 @@
+<div class="random-message">
+    {% assign messages_count = section.blocks.size %}
+
+    {% if messages_count > 0 %}
+        {% assign random_index = 'now' | date:'%N' | modulo: messages_count %}
+        {% assign random_block = section.blocks[random_index] %}
+
+        <div class="message" id="block-{{ random_block.id }}">
+            {{ random_block.settings.message }}    
+        </div>    
+    {%  endif %}
+</div>
+
+{%  schema %}
+{
+    "name": "Random Messages Forix",
+    "tag": "section",
+    "class": "random-messages-section",
+
+    "blocks": [{
+        "type": "messages",
+        "name": "random-messages",
+        "settings": [{
+            "type": "text",
+            "id": "message",
+            "label": "Message"
+        }]
+    }],
+    "presets": [    
+        {
+            "name": "Random Messages"
+        }
+    ]
+}
+{% endschema %}
