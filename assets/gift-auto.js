@@ -29,7 +29,7 @@ function hasGift(cart) {
 
 // Add Gift
 async function addGift() {
-    await fetch('/cart/add.js', {
+    const response = await fetch('/cart/add.js', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -39,6 +39,10 @@ async function addGift() {
             quantity: 1
         })
     });
+    if (!response.ok) {
+        throw new Error('Cannot add gift');
+    }
+
     await refreshRandomMessageSection();
 }
 
@@ -52,7 +56,7 @@ function getGiftLine(cart){
 
 // Remove gift 
 async function removeGift(line) {
-    await fetch('/cart/change.js', {
+    const response = await fetch('/cart/change.js', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -62,6 +66,11 @@ async function removeGift(line) {
             quantity: 0 
         })
     });
+    if (!response.ok) {
+        throw new Error('Cannot add gift');
+    }
+
+    await refreshRandomMessageSection();
 }
 
 async function checkGiftThreshold(){
@@ -90,15 +99,20 @@ async function checkGiftThreshold(){
 }
 
 
-async function getRandomMessageSection(){
-    const response = fetch('${window.location.pathname}?section_id=random-messsages');
-
-    if(!response.ok){
-        throw new Error('Cannot get random message section');
+async function getRandomMessageSection() {
+    const url = new URL(window.location.href);
+  
+    url.searchParams.set('section_id', 'random-message');
+  
+    const response = await fetch(url.toString());
+  
+    if (!response.ok) {
+      throw new Error('Cannot get random message section');
     }
+  
     return response.text();
-}
-
+  }
+  
 async function refreshRandomMessageSection() {
     const html = await getRandomMessageSection();
   
@@ -111,6 +125,6 @@ async function refreshRandomMessageSection() {
     if (!newSection || !currentSection) return;
   
     currentSection.replaceWith(newSection);
-  }
+}
 
 
