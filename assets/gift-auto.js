@@ -100,9 +100,17 @@ async function checkGiftThreshold(){
 
 
 async function getRandomMessageSection() {
+    const currentSection = document.querySelector('.random-message');
+    
+    const sectionId = currentSection?.dataset.sectionId;
+
+    if (!sectionId) {
+      throw new Error('Cannot find random message section id');
+    }
+
     const url = new URL(window.location.href);
   
-    url.searchParams.set('section_id', 'random-messages');
+    url.searchParams.set('section_id', sectionId);
   
     const response = await fetch(url.toString());
   
