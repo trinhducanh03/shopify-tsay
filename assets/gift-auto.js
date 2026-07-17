@@ -22,11 +22,6 @@ async function getCart() {
     return await response.json();
 }
 
-// Check if the gift is in cart.
-function hasGift(cart) {
-    return cart.items.some(item => item.variant_id === giftVariantId);
-}
-
 // Add Gift
 async function addGift() {
     const response = await fetch('/cart/add.js', {
@@ -69,8 +64,6 @@ async function removeGift(line) {
     if (!response.ok) {
         throw new Error('Cannot add gift');
     }
-
-    await getRandomMessageSection();
 }
 
 async function checkGiftThreshold(){
@@ -111,7 +104,8 @@ async function getRandomMessageSection() {
     const url = new URL(window.location.href);
     url.searchParams.set('section_id', sectionId);
 
-    const response = await fetch(url.toString())
+    const response = await fetch(url.toString());
+    
     if (!response.ok) {
         throw new Error('Cannot get random message section');
     }

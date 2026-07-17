@@ -1,21 +1,5 @@
 <div class="faqs">
-    {% if product %}
-      <h2>{{ product.metafields.custom.faq_title.value }}</h2>
-  
-      <p>{{ product.metafields.custom.faq_description.value }}</p>
-  
-      {% for faq in product.metafields.custom.faq_list.value %}
-        <details class="faq-item">
-          <summary class="faq-question">
-            {{ faq.question.value }}
-          </summary>
-  
-          <div class="faq-answer">
-            {{ faq.answer.value }}
-          </div>
-        </details>
-      {% endfor %}
-    {% else %}
+
       <h2>{{ section.settings.heading }}</h2>
   
       <p>{{ section.settings.description }}</p>
@@ -31,7 +15,6 @@
           </div>
         </details>
       {% endfor %}
-    {% endif %}
 </div>
 <style>
     .faq-item {
