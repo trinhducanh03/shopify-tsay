@@ -42,7 +42,7 @@ async function addGift() {
     if (!response.ok) {
         throw new Error('Cannot add gift');
     }
-
+    console.log('Gift added successfully');
     await getRandomMessageSection();
 }
 
@@ -100,6 +100,8 @@ async function checkGiftThreshold(){
 
 
 async function getRandomMessageSection() {
+    console.log('Refreshing random message section');
+    
     const currentSection = document.querySelector('.random-message');
     if (!currentSection) {
         throw new Error('Random message section not found');
