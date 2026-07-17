@@ -83,6 +83,18 @@
     },
     "faqs_pfc7dY": {
       "type": "faqs",
+      "blocks": {
+        "faq_dcyFHR": {
+          "type": "faq",
+          "settings": {
+            "question": "test 1",
+            "answer": "test 2"
+          }
+        }
+      },
+      "block_order": [
+        "faq_dcyFHR"
+      ],
       "name": "FAQs ",
       "settings": {
         "heading": "",
