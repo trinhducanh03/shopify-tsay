@@ -43,7 +43,7 @@ async function addGift() {
         throw new Error('Cannot add gift');
     }
 
-    await refreshRandomMessageSection();
+    await getRandomMessageSection();
 }
 
 // Find line gift
@@ -70,7 +70,7 @@ async function removeGift(line) {
         throw new Error('Cannot add gift');
     }
 
-    await refreshRandomMessageSection();
+    await getRandomMessageSection();
 }
 
 async function checkGiftThreshold(){
@@ -131,19 +131,3 @@ async function getRandomMessageSection() {
 
     console.log(newSection);
 }
-
-// async function refreshRandomMessageSection() {
-//     const html = await getRandomMessageSection();
-  
-//     const parser = new DOMParser();
-//     const doc = parser.parseFromString(html, 'text/html');
-  
-//     const newSection = doc.querySelector('.random-message');
-//     const currentSection = document.querySelector('.random-message');
-  
-//     if (!newSection || !currentSection) return;
-  
-//     currentSection.replaceWith(newSection);
-// }
-
-
